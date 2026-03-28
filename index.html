@@ -701,9 +701,10 @@ function renderTpl(){
     }
     const sb=t.scoreTrack?'<span style="font-size:10px;background:var(--monthly);color:white;border-radius:4px;padding:1px 5px;margin-left:6px">副業'+(t.duration?' '+t.duration+'分':'')+'</span>':'';
     const lb=t.link?'<span style="font-size:12px;margin-left:6px">🔗</span>':'';
+    const inlineSub=sub.startsWith('<span')?sub:'';
     const subNote=sub.startsWith('<div')?sub:'';
     return '<div class="tpl-card '+cls+'">'
-      +'<div style="flex:1"><div class="tpl-name">'+esc(t.name)+sub+sb+lb+'</div>'
+      +'<div style="flex:1"><div class="tpl-name">'+esc(t.name)+inlineSub+sb+lb+'</div>'
       +subNote
       +(t.note&&type!=='morning'?'<div class="tpl-note">'+esc(t.note)+'</div>':'')
       +'</div>'
@@ -974,7 +975,7 @@ function setMType(type){
   const isWeekly=type==='weekly'||type==='biweekly';
   document.getElementById('dowRow').style.display=isWeekly?'block':'none';
   document.getElementById('periodicRow').style.display=type==='periodic'?'block':'none';
-  document.getElementById('weekdayRow').style.display=(type==='monthly'||type==='periodic')?'none':'flex';
+  document.getElementById('weekdayRow').style.display=(type==='morning')?'flex':'none';
   document.getElementById('scoreRow').style.display=(type==='morning'||type==='monthly')?'none':'flex';
   document.getElementById('subRow').style.display=type==='monthly'?'block':'none';
   document.getElementById('mSubmit').className='btn '+cls[type];
