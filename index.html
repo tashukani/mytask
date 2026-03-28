@@ -322,6 +322,7 @@ input:checked+.slider:before { transform:translateX(18px); }
 let view='all', modalMode=null, editTplId=null, editTplType=null, mType='morning';
 let currentFreq='quarterly';
 let modalSubs=[];
+window.addEventListener('DOMContentLoaded', load);
 
 let data={
   templates:{morning:[],weekly:[],biweekly:[],monthly:[],periodic:[]},
