@@ -976,7 +976,7 @@ function setMType(type){
   document.getElementById('dowRow').style.display=isWeekly?'block':'none';
   document.getElementById('periodicRow').style.display=type==='periodic'?'block':'none';
   document.getElementById('weekdayRow').style.display=(type==='morning')?'flex':'none';
-  document.getElementById('scoreRow').style.display=(type==='morning'||type==='monthly')?'none':'flex';
+  document.getElementById('scoreRow').style.display=(type==='monthly')?'none':'flex';
   document.getElementById('subRow').style.display=type==='monthly'?'block':'none';
   document.getElementById('mSubmit').className='btn '+cls[type];
   document.getElementById('mName').className='minp '+cls[type];
