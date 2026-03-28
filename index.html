@@ -274,8 +274,8 @@ input:checked+.slider:before { transform:translateX(18px); }
       <div class="mlabel">&#x983B;&#x5EA6;</div>
       <div style="display:flex;gap:6px;margin-bottom:12px">
         <button class="type-btn pr active" id="freqBtnQ" onclick="setFreq('quarterly')" style="flex:1">3&#x30F6;&#x6708;</button>
-        <button class="type-btn pr" id="freqBtnH" onclick="setFreq('halfyear')" style="flex:1">&#x534A;&#x5E74;</button>
-        <button class="type-btn pr" id="freqBtnY" onclick="setFreq('yearly')" style="flex:1">&#x5E741;&#x56DE;</button>
+        <button class="type-btn pr" id="freqBtnH" onclick="setFreq('halfyear')" style="flex:1">6ヶ月</button>
+        <button class="type-btn pr" id="freqBtnY" onclick="setFreq('yearly')" style="flex:1">12ヶ月</button>
       </div>
       <div class="mlabel">&#x958B;&#x59CB;&#x65E5;&#xFF08;&#x521D;&#x56DE;&#x671F;&#x65E5;&#xFF09;</div>
       <input class="minp sm" id="mStartDate" type="date" style="margin-bottom:4px">
@@ -715,7 +715,7 @@ function renderTpl(){
 
   // periodic cards
   function periodicCard(t){
-    const fl={quarterly:'3ヶ月',halfyear:'半年',yearly:'年1回'}[t.freq]||'';
+    const fl={quarterly:'3ヶ月',halfyear:'6ヶ月',yearly:'12ヶ月'}[t.freq]||'';
     const next=calcNextDue(t.freq,t.startDate,t.lastDone||null);
     let dueHtml='';
     if(next){
